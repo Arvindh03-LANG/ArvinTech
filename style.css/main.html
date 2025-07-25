@@ -1,0 +1,88 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Page</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="book-container">
+        <div class="book-details">
+            <h1 class="book-title" id="bookTitle">Book Title</h1>
+            <p class="author" id="author">Author</p>
+            <p class="description" id="description">Description</p>
+            <p class="published-date" id="publishedDate">Published Date</p>
+            <p class="pages" id="pages">Number of Pages</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+CSS (styles.css):
+
+css
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.book-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.book-details {
+    text-align: center;
+}
+
+.book-title {
+    font-size: 24px;
+    margin: 0;
+}
+
+.author {
+    font-style: italic;
+}
+
+.description {
+    margin-top: 10px;
+}
+
+.published-date,
+.pages {
+    margin-top: 5px;
+    font-size: 14px;
+}
+
+JavaScript (script.js):
+
+javascript
+
+// You can use this JavaScript file to dynamically update the book details
+
+// Simulated book data
+const book = {
+    title: "Sample Book",
+    author: "John Doe",
+    description: "This is a sample book description.",
+    publishedDate: "January 1, 2023",
+    pages: 200
+};
+
+// Function to update the book details in the HTML
+function updateBookDetails() {
+    document.getElementById('bookTitle').textContent = book.title;
+    document.getElementById('author').textContent = `by ${book.author}`;
+    document.getElementById('description').textContent = book.description;
+    document.getElementById('publishedDate').textContent = `Published: ${book.publishedDate}`;
+    document.getElementById('pages').textContent = `Pages: ${book.pages}`;
+}
+
+// Call the function to display book details
+updateBookDetails();

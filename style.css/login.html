@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>The Bookshelf.com</title>
+    <style>
+        body {
+            background-color: skyblue;
+        }
+    </style>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div id="1">
+        <form onsubmit="return validateForm()">
+            <fieldset>
+                <legend>SIGNin</legend>
+                <h2>Sign in: <input type="text" name="name"></h2>
+                <h2>Password: <input type="password" name="pass"></h2>
+                <h2>Confirm password: <input type="password" name="con"></h2>
+                <button type="submit">Submit</button>
+                <input type="reset" value="Reset">
+            </fieldset>
+        </form>
+    </div>
+
+    <script>
+        function validateForm() {
+            var name = document.forms[0].elements["name"].value;
+            var pass = document.forms[0].elements["pass"].value;
+            var con = document.forms[0].elements["con"].value;
+
+            if (name.trim() === '' || pass.trim() === '' || con.trim() === '') {
+                alert("Please fill in all fields");
+                return false;
+            }
+
+            if (pass !== con) {
+                alert("Passwords do not match");
+                return false;
+            }
+
+            // Add any additional validation logic here if needed
+
+            // If all validations pass, the form will be submitted
+            return true;
+        }
+    </script>
+</body>
+</html>
